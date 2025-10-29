@@ -3,7 +3,7 @@
 O **Hércules_Festas.v2** é uma evolução do meu primeiro grande projeto, desenvolvido originalmente como um freelancer simples para otimizar o controle de aluguel de materiais para festas.  
 Apesar de ter começado de forma modesta, foi um trabalho que exigiu muita dedicação, aprendizado e inúmeras melhorias ao longo do tempo.
 
-Devido à necessidade apontada pelo cliente de um sistema mais fácil de compreender, foi implementado um banco de dados e um front-end simples para facilitar a visualização.
+Atendendo à necessidade do cliente por um sistema mais intuitivo, desenvolvemos um banco de dados robusto para o armazenamento de informações e uma interface front-end simplificada para facilitar a visualização.
 
 ### 🧩 Tecnologias
 - **Backend:** Python
