@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hércules Festas - Gerenciador de Aluguéis</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🎉 Hércules Festas</h1>
+            <p>Gerenciador de Aluguéis</p>
+        </header>
+
+        <main>
+            <div class="form-container card">
+                <h2>Adicionar Novo Aluguel</h2>
+                <form id="formAluguel">
+                    <div class="form-group">
+                        <label for="cliente">Nome do Cliente</label>
+                        <input type="text" id="cliente" placeholder="Ex: João da Silva" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="endereco">Endereço de Entrega</label>
+                        <input type="text" id="endereco" placeholder="Ex: Rua das Flores, 123">
+                    </div>
+                    <div class="form-group">
+                        <label for="itens">Itens Alugados</label>
+                        <textarea id="itens" rows="3" placeholder="Ex: 10 mesas, 40 cadeiras, 1 toalha"></textarea>
+                    </div>
+                    <button type="submit">Adicionar Aluguel</button>
+                </form>
+            </div>
+
+            <div class="alugueis-container">
+                <h2>Aluguéis Ativos</h2>
+                <div id="listaAlugueis">
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

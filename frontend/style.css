@@ -1,0 +1,51 @@
+// Dados simulados para testar a renderização
+const DADOS_ALUGUEIS_SIMULADOS = [
+    { id: 1, cliente: "Maria Silva", total: 450.00, itens: "Pula-pula médio, Tenda 4x8" },
+    { id: 2, cliente: "João Souza", total: 690.00, itens: "Tobogã (4h c/ monitor)" },
+    { id: 3, cliente: "Ana Oliveira", total: 80.50, itens: "Mesa (x4), Cadeira (x20)" }
+];
+
+/**
+ * Função que simula a obtenção de dados do backend (ou de localStorage).
+ * No futuro, este seria o ponto de integração com a API Python/SQLite.
+ * @returns {Array} Lista de objetos de aluguéis.
+ */
+function obterAlugueis() {
+    // Por enquanto, retorna os dados simulados.
+    // Para persistência real, usaria: return JSON.parse(localStorage.getItem('alugueis')) || [];
+    return DADOS_ALUGUEIS_SIMULADOS; 
+}
+
+/**
+ * Função que recebe a lista de aluguéis e os exibe no elemento <ul>.
+ * @param {Array} alugueis - Lista de aluguéis a ser exibida.
+ */
+function renderizarAlugueis(alugueis) {
+    const lista = document.getElementById('listaAlugueis');
+    lista.innerHTML = ''; // Limpa a lista antes de renderizar
+
+    if (alugueis.length === 0) {
+        lista.innerHTML = '<li>Nenhum aluguel ativo encontrado.</li>';
+        return;
+    }
+
+    alugueis.forEach(aluguel => {
+        const itemLista = document.createElement('li');
+        itemLista.textContent = `ID: ${aluguel.id} | Cliente: ${aluguel.cliente} | Total: R$ ${aluguel.total.toFixed(2)}`;
+        lista.appendChild(itemLista);
+    });
+}
+
+// Garante que o script só rode após o carregamento completo da página
+document.addEventListener('DOMContentLoaded', () => {
+    const btnVerAlugueis = document.getElementById('btnVerAlugueis');
+
+    // Listener de clique, como solicitado. Agora ele chama funções estruturadas.
+    btnVerAlugueis.addEventListener('click', () => {
+        const alugueis = obterAlugueis();
+        renderizarAlugueis(alugueis);
+    });
+
+    // Opcional: Renderizar os aluguéis ao carregar a página
+    // renderizarAlugueis(obterAlugueis());
+});
